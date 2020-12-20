@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Bénéficiaire{% endblock %}
+
+{% block body %}
+    <h1>Bénéficiaire</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ target.id }}</td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td>{{ target.name }}</td>
+            </tr>
+            <tr>
+                <th>IBAN</th>
+                <td>{{ target.IBAN }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('target_index') }}">Retour à la liste</a>
+
+    <a href="{{ path('target_edit', {'id': target.id}) }}">Editer</a>
+
+    {{ include('target/_delete_form.html.twig') }}
+{% endblock %}
